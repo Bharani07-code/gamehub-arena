@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {createRoot} from "react-dom/client";
 import "./styles.css";
+import ChessGame from "./Chess.jsx";
 
 const initialPlayers = [
   {name:"Nova", rating:2850, level:31, avatar:"N"},
@@ -100,10 +101,16 @@ function Play({onWin}){
   return <section><div className="section-title"><div><div className="eyebrow">GAME ARENA</div><h1>Pick a battle</h1></div><span className="pill">🟢 Matchmaking ready</span></div>
     <div className="games play-grid">
       <Game icon="❌⭕" title="Tic-Tac-Toe" text="Play now" onClick={()=>{}}/>
-      <Game icon="♟️" title="Chess" text="Coming soon" locked/>
+      <Game
+  icon="♟️"
+  title="Chess"
+  text="Playable Chess"
+/>
       <Game icon="🧩" title="Puzzle" text="Coming soon" locked/>
     </div>
     <TicTacToe onWin={onWin}/>
+    
+<ChessGame onWin={onWin}/>
   </section>
 }
 function Leaderboard({players}){
